@@ -1,3 +1,45 @@
-# Template for Bootstrap 4 with gulp.
+# Template for Bootstrap 4 with gulp
+
+## Plugins
+- browser-sync (Time-saving synchronised browser testing)
+- gulp-autoprefixer (Prefix CSS with Autoprefixer)
+- gulp-cssbeautify (Reindent and reformat CSS)
+- gulp-cssnano (Minify CSS with cssnano.)
+- gulp-imagemin (Minify PNG, JPEG, GIF and SVG images)
+- gulp-plumber (Prevent pipe breaking caused by errors from gulp plugins)
+- gulp-rename (Rename files)
+- gulp-rigger (Rigger is a build time include engine for Javascript, CSS, CoffeeScript and in gene-any type of text file that you wish to might want to "include" other files into.)
+- gulp-sass (Gulp plugin for sass)
+- gulp-strip-css-comments (Strip comments from CSS)
+- gulp-uglify (Minify files with UglifyJS.)
+- gulp-watch (Watch, that actually is an endless stream)
+- run-sequence (Run a series of dependent gulp tasks in order)
+- rimraf (A deep deletion module for node)
 
 
+## Dependencies
+
+- [NodeJS](https://nodejs.org/)
+- [Git](https://git-scm.com)
+
+## Installation
+
+#### from github:
+
+```bash
+git clone https://github.com/efimch/bootstrap4-gulp projectname
+cd projectname
+npm install
+```
+
+## Running
+
+```bash
+npm gulp
+```
+
+## Build
+
+```bash
+npm run build
+```

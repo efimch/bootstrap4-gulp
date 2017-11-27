@@ -1,4 +1,4 @@
-# Template for Bootstrap 4 with gulp
+# Bootstrap 4 (beta.2) template for develop with gulp
 
 ## Plugins
 - browser-sync (Time-saving synchronised browser testing)
@@ -27,19 +27,19 @@
 #### from github:
 
 ```bash
-git clone https://github.com/efimch/bootstrap4-gulp projectname
-cd projectname
+git clone https://github.com/efimch/bootstrap4-gulp
+cd bootstrap4-gulp
 npm install
 ```
 
 ## Running
 
 ```bash
-npm gulp
+gulp
 ```
 
 ## Build
 
 ```bash
-npm run build
+run build
 ```

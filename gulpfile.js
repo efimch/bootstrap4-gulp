@@ -15,7 +15,8 @@ var gulp = require("gulp"),
     run = require("run-sequence"),
     rimraf = require("rimraf"),
     webserver = require("browser-sync"),
-    nunjucksRender = require("gulp-nunjucks-render");
+    nunjucksRender = require("gulp-nunjucks-render"),
+    data = require('gulp-data');
 
 
 
@@ -71,6 +72,9 @@ gulp.task("webserver", function () {
 gulp.task("html:build", function () {
     return gulp.src(path.src.html)
         // Renders template with nunjucks
+        .pipe(data(function() {
+          return require('./src/data/data.json')
+        }))
         .pipe(nunjucksRender({path: ['src/templates']}))
         .pipe(plumber())
         .pipe(rigger())

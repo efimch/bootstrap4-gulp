@@ -2,6 +2,7 @@
 
 ## Plugins
 - gulp-nunjucks-render (Render Nunjucks templates)
+- gulp-data(With gulp-data you can generate a data object from a variety of sources: json, front-matter, database, anything...)
 - browser-sync (Time-saving synchronised browser testing)
 - gulp-autoprefixer (Prefix CSS with Autoprefixer)
 - gulp-cssnano (Minify CSS with cssnano.)

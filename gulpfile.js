@@ -14,7 +14,8 @@ var gulp = require("gulp"),
     imagemin = require("gulp-imagemin"),
     run = require("run-sequence"),
     rimraf = require("rimraf"),
-    webserver = require("browser-sync");
+    webserver = require("browser-sync"),
+    nunjucksRender = require("gulp-nunjucks-render");
 
 
 
@@ -30,14 +31,14 @@ var path = {
         fonts: "build/assets/fonts/"
     },
     src: {
-        html: "src/*.{htm,html}",
+        html: "src/pages/**/*.+(html|nunjucks)",
         js: "src/assets/js/*.js",
         css: "src/assets/sass/style.scss",
         img: "src/assets/img/**/*.*",
         fonts: "src/assets/fonts/**/*.*"
     },
     watch: {
-        html: "src/**/*.{htm,html}",
+        html: "src/pages/**/*.+(html|nunjucks)",
         js: "src/assets/js/**/*.js",
         css: "src/assets/sass/**/*.scss",
         img: "src/assets/img/**/*.*",
@@ -67,9 +68,10 @@ gulp.task("webserver", function () {
     webserver(config);
 });
 
-
 gulp.task("html:build", function () {
     return gulp.src(path.src.html)
+        // Renders template with nunjucks
+        .pipe(nunjucksRender({path: ['src/templates']}))
         .pipe(plumber())
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
@@ -86,7 +88,6 @@ gulp.task("css:build", function () {
             cascade: true
         }))
         .pipe(removeComments())
-        .pipe(cssbeautify())
         .pipe(gulp.dest(path.build.css))
         .pipe(cssnano({
             zindex: false,

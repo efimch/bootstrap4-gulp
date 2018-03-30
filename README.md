@@ -1,9 +1,9 @@
-# Bootstrap 4 (beta.2) template for develop with gulp
+# Bootstrap 4 template for develop with gulp
 
 ## Plugins
+- gulp-nunjucks-render (Render Nunjucks templates)
 - browser-sync (Time-saving synchronised browser testing)
 - gulp-autoprefixer (Prefix CSS with Autoprefixer)
-- gulp-cssbeautify (Reindent and reformat CSS)
 - gulp-cssnano (Minify CSS with cssnano.)
 - gulp-imagemin (Minify PNG, JPEG, GIF and SVG images)
 - gulp-plumber (Prevent pipe breaking caused by errors from gulp plugins)

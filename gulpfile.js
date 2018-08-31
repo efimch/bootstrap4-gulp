@@ -40,12 +40,15 @@ var path = {
     },
     watch: {
         html: "src/pages/**/*.+(html|nunjucks)",
+        layout: "src/templates/**/*.+(html|nunjucks)",
         js: "src/assets/js/**/*.js",
         css: "src/assets/sass/**/*.scss",
         img: "src/assets/img/**/*.*",
         fonts: "src/assets/fonts/**/*.*"
     },
-    clean: "./build"
+    clean: "./build",
+    json: "./src/data/data.json"
+
 };
 
 
@@ -73,7 +76,7 @@ gulp.task("html:build", function () {
     return gulp.src(path.src.html)
         // Renders template with nunjucks
         .pipe(data(function() {
-          return require('./src/data/data.json')
+          return require(path.json)
         }))
         .pipe(nunjucksRender({path: ['src/templates']}))
         .pipe(plumber())
@@ -155,6 +158,12 @@ gulp.task('build', function (cb) {
 
 gulp.task("watch", function() {
     watch([path.watch.html], function(event, cb) {
+        gulp.start("html:build");
+    });
+        watch([path.watch.layout], function(event, cb) {
+        gulp.start("html:build");
+    });
+    watch([path.json], function(event, cb) {
         gulp.start("html:build");
     });
     watch([path.watch.css], function(event, cb) {

@@ -1,9 +1,8 @@
 {
-  "images": [{
-    "src": "image-one.png",
-    "alt": "Image one alt text"
-  }, {
-    "src": "image-two.png",
-    "alt": "Image two alt text"
-  }]
+  "items": [
+    {"title": "Первый",
+    "url": "/items/item_detail.html"},
+    {"title": "Второй",
+    "url": "/items/item_detail.html"},
+    ]
 }

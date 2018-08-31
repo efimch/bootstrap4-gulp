@@ -1,4 +1,4 @@
-# Bootstrap 4 template for develop with gulp
+# Bootstrap 4 ready simple template for develop with gulp
 
 ## Plugins
 - gulp-nunjucks-render (Render Nunjucks templates)
@@ -20,8 +20,10 @@
 
 ## Dependencies
 
+Update these before install
+
 - [NodeJS](https://nodejs.org/)
-- [Git](https://git-scm.com)
+- [Npm](https://npmjs.com)
 
 ## Installation
 
